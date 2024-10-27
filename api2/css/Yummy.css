@@ -1,0 +1,373 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Work Sans', sans-serif;
+    background-color: black;
+}
+@media (min-width: 768px){
+    .container{
+        width: 750px;
+    }
+}
+@media (min-width: 992px){
+    .container{
+        width: 970px;
+    }
+}
+@media (min-width: 1200px){
+    .container{
+        width: 1170px;
+    }
+}
+.sidebar{
+    display: flex;
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    background-color: black;
+    transform: translateX(-75%);
+    transition: 3s;
+    z-index: 9999;
+}
+.sidebar.move{
+    transform: translateX(0px);
+}
+.sidebar .links{
+    padding: 20px 0px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sidebar .links ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    top: 0;
+    position: relative;
+
+}
+.sidebar .links ul a{
+    color: white;
+    text-decoration: none;
+    position: relative;
+    transition: 1s;
+}
+.sidebar .links ul a:nth-child(1){
+    top: 80px;
+}
+.sidebar .links ul a:nth-child(2){
+    top: 90px;
+}
+.sidebar .links ul a:nth-child(3){
+    top: 100px;
+}
+.sidebar .links ul a:nth-child(4){
+    top: 110px;
+}
+.sidebar .links ul a:nth-child(5){
+    top: 120px;
+}
+.sidebar .links ul a.top{
+    top: 0px;
+}
+.sidebar .footer{
+    color: white;
+}
+.sidebar .buttons{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+.sidebar .buttons img{
+    width: 70px;
+}
+.sidebar .buttons .icon{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.sidebar .buttons i{
+    cursor: pointer;
+}
+.information{
+    color: white;
+    width: 75%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.information img{
+    width: 100%;
+    border-radius: 10px;
+}
+.information .info{
+    display: flex;
+    gap: 20px;
+}
+.information .info p{
+    margin-top: 10px;
+    line-height: 1.5;
+}
+.information .info ul{
+    margin-top: 10px;
+    display: flex;
+    list-style: none;
+    gap: 5px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.information .info ul li{
+    background-color: #cff4fc;
+    color: #055160;
+    padding: 14px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.information .my-span{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.information .my-span span{
+    margin-top: 10px;
+}
+.information .my-span div{
+    margin-top: 20px;
+}
+.information .my-span span:nth-child(1){
+    background-color: #f8d7da;
+    color: #842029;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 5px;
+}
+.information .my-span div a:nth-child(1){
+   color: white;
+   background-color: #198754;
+   padding: 10px;
+   border-radius: 5px;
+   text-decoration: none;
+}
+.information .my-span div a:nth-child(2){
+    color: white;
+    background-color: #dc3545;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.my-image , .my-categories , .my-ingredients , .my-area , .default {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    width: 75%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    gap: 20px;
+    position: relative;
+}
+.my-image .image , .my-categories .image , .default .image {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.my-image img , .my-categories img , .default img  {
+    width: 100%;
+}
+.my-image .layer , .my-categories .layer , .default .layer {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ddd;
+    transition: 1s;
+    opacity: 0;
+}
+.my-image h2 {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+}
+.my-image .image:hover .layer , .my-categories .image:hover .layer , .default .image:hover .layer{
+    opacity: 1;
+    top: 0;
+}
+.my-categories h2{
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.my-categories p{
+    font-size: 12px;
+    text-align: center;
+}
+.default h2{
+    margin-top: 50px;
+    text-align: center;
+    font-weight: 600;
+}
+.my-ingredients div , .my-area div{
+    color: white; 
+    text-align: center;
+}
+.my-ingredients h2{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+.my-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    margin-top: 20px;
+}
+.my-form input{
+    width: 35%;
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+.my-form input:focus{
+    outline: 3px solid cornflowerblue;
+}
+@media(max-width: 767px){
+    .my-form{
+        flex-direction: column;
+    }
+    .my-form input{
+        width: 60%;
+    }
+}
+.contact{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.my-contact{
+    width: 100%;
+}
+.my-contact form{
+    margin: auto;
+    width: 70%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 20px;
+}
+@media(max-width: 767px){
+    .my-contact form{
+        grid-template-columns: 100%;
+    }
+}
+.my-contact input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+.my-contact input:focus{
+    outline: 3px solid blue;
+}
+.my-contact p{
+    color: red;
+    background-color: pink;
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 10px;
+    display: none;
+}
+.contact button{
+    padding: 10px;
+    background-color: transparent;
+    color: #ff000069;
+    border: 1px solid;
+    border-radius: 10px;
+}
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99999;
+}
+.loader {
+    color: #fff;
+    font-size: 10px;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    position: relative;
+    text-indent: -9999em;
+    animation: mulShdSpin 1.3s infinite linear;
+    transform: translateZ(0);
+  }
+  
+  @keyframes mulShdSpin {
+    0%,
+    100% {
+      box-shadow: 0 -3em 0 0.2em, 
+      2em -2em 0 0em, 3em 0 0 -1em, 
+      2em 2em 0 -1em, 0 3em 0 -1em, 
+      -2em 2em 0 -1em, -3em 0 0 -1em, 
+      -2em -2em 0 0;
+    }
+    12.5% {
+      box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 
+      3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, 
+      -2em 2em 0 -1em, -3em 0 0 -1em, 
+      -2em -2em 0 -1em;
+    }
+    25% {
+      box-shadow: 0 -3em 0 -0.5em, 
+      2em -2em 0 0, 3em 0 0 0.2em, 
+      2em 2em 0 0, 0 3em 0 -1em, 
+      -2em 2em 0 -1em, -3em 0 0 -1em, 
+      -2em -2em 0 -1em;
+    }
+    37.5% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
+       3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, 
+       -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
+       3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, 
+       -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
+       3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, 
+       -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+      box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 
+      3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, 
+      -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+      box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 
+      3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, 
+      -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+  }
+    
